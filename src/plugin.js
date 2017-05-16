@@ -1,6 +1,6 @@
 let Papa = require('./components/Papa.vue');
 
-module.export = {
+module.exports = {
   install: function (vue) {
     vue.component('papa-parse', Papa);
   },
