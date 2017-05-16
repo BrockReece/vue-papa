@@ -1,7 +1,16 @@
 <template>
-  <div id="app">
+  <div id="app" class="container">
     <papa-parse :config="{header: true}" @complete="complete"></papa-parse>
-    <div>{{ parsed }}</div>
+    <table class="table is-striped is-narrow" v-if="parsed.data">
+      <thead>
+        <th v-for="field in parsed.meta.fields">{{ field }}</th>
+      </thead>
+      <tbody>
+        <tr v-for="row in parsed.data">
+          <td v-for="field in parsed.meta.fields">{{ row[field] }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 

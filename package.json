@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A vue wrapper for papaparse",
   "author": "Brock <brock.reece@croud.co.uk>",
-  "private": true,
+  "main": "src/plugin.js",
   "scripts": {
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",
