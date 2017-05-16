@@ -1,17 +1,30 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <hello></hello>
+    <papa-parse :config="{header: true}" @complete="complete"></papa-parse>
+    <div>{{ parsed }}</div>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello';
+import PapaParse from './components/Papa';
 
 export default {
   name: 'app',
+
+  data() {
+    return {
+      parsed: {},
+    };
+  },
+
   components: {
-    Hello,
+    PapaParse,
+  },
+
+  methods: {
+    complete(results) {
+      this.parsed = results;
+    },
   },
 };
 </script>
